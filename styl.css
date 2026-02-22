@@ -1,0 +1,174 @@
+/* Variables de couleurs officielles */
+:root {
+    --fl-red: #ed1c24;
+    --fl-black: #000000;
+    --fl-white: #ffffff;
+    --fl-bg-dark: #0a0a0a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: var(--fl-white);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Conteneur principal simulant l'écran */
+.container {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 10;
+    background-color: var(--fl-bg-dark);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #222;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+    background-image: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+}
+
+/* Bandes de pellicule (Film Strip) */
+.film-strip {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background-image: linear-gradient(to right, #fff 0%, #fff 60%, transparent 60%, transparent 100%);
+    background-size: 24px 100%;
+    background-repeat: repeat-x;
+    opacity: 0.8;
+    z-index: 5;
+}
+
+.film-strip-top { top: 25px; }
+.film-strip-bottom { bottom: 25px; }
+
+/* Petit logo en haut à gauche */
+.fl-logo-small {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    color: var(--fl-red);
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-style: italic;
+    border: 2px solid var(--fl-red);
+    padding: 2px 10px;
+    line-height: 1;
+}
+
+/* Mise en page du contenu */
+.main-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 90%;
+    justify-content: center;
+}
+
+/* Bloc central "MINES LOCKER" */
+.mines-locker-box {
+    background-color: #f8f8f8;
+    padding: 25px 40px;
+    text-align: center;
+    position: relative;
+    box-shadow: 6px 6px 0px var(--fl-red);
+    border-radius: 4px;
+    /* Texture légère en diagonale */
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px);
+}
+
+.mines-locker-box h1 {
+    font-family: 'Oswald', sans-serif;
+    color: #222;
+    font-size: 64px;
+    line-height: 0.85;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.mines-locker-box h1 span {
+    color: var(--fl-red);
+    display: block;
+    font-size: 72px;
+    margin-top: 5px;
+}
+
+/* Sous-titre */
+.subtitle {
+    margin-top: 25px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 1.4;
+    color: #ddd;
+}
+
+/* Bouton CTA avec forme trapézoïdale */
+.cta-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cta-button {
+    background-color: var(--fl-white);
+    color: #111;
+    padding: 14px 45px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-style: italic;
+    /* Création de la forme inclinée */
+    clip-path: polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 20px;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.cta-bg-red {
+    position: absolute;
+    right: -35px;
+    width: 180px;
+    height: 45px;
+    background-color: var(--fl-red);
+    z-index: 1;
+    clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
+    opacity: 0.9;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    background-color: #eee;
+}
+
+/* Texture de fond subtile */
+.bg-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, #333 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.05;
+    pointer-events: none;
+}
